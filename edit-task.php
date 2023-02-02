@@ -11,6 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+
 $sql = "SELECT * FROM tasks WHERE id=".$_GET["id"];
 $result = $conn->query($sql);
 
@@ -27,10 +28,14 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
+    <h1>
     <?php 
         while($row = $result->fetch_assoc()) {
             echo "<p> <li> {$row ["id"]} {$row ["title"]} </li> </p>";
         }
     ?>
+    </h1>
+    <p>Task:</p> 
+    <?= $id["task"] ?>
 </body>
 </html>

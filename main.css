@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+* {
+  font-family: "Cardo", serif;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -7,25 +11,31 @@ body {
   align-items: center;
   color: #292929;
   overflow: hidden;
+  background-color: #fafafa;
 }
 
 svg {
-  filter: blur(1px);
-  position: absolute;
+  position: relative;
+  transition: all 1s ease;
+  filter: blur(6px);
+  border: 4px solid red;
+  margin: -500px;
+  mix-blend-mode: darken;
 }
 
 #container, #subcontainer {
   height: 80vh;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   border-radius: 40px;
   box-shadow: rgba(100, 100, 111, 0.2) 7px 7px 29px 0px;
   position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 5%;
   box-sizing: border-box;
+  z-index: 10000;
 }
 
 #container {
@@ -35,7 +45,7 @@ svg {
 #subcontainer {
   opacity: 0;
   width: 30vw;
-  z-index: -100;
+  z-index: 100;
   border-radius: 0 40px 40px 0;
   position: absolute;
   left: 45vw;
@@ -43,7 +53,6 @@ svg {
 }
 
 h1 {
-  font-family: "Cardo", serif;
   font-size: 2, 5em;
   color: #292929;
 }
@@ -60,9 +69,9 @@ ul {
   text-align: left;
 }
 ul li {
-  border-bottom: 1px solid black;
+  border-bottom: 1.5px solid #292929;
   padding: 2%;
-  font-family: sans-serif;
+  transition: all 1s ease;
 }
 ul li:hover {
   padding: 4% 2%;
@@ -75,6 +84,16 @@ button {
 
 #new-task {
   text-align: end;
+  width: 50px;
+  transition: transform 1s ease;
+  position: absolute;
+  left: 70%;
+  top: 80%;
+}
+
+#new-task:hover {
+  transform-origin: center center;
+  transform: scale(1.2);
 }
 
 .plus {
@@ -83,27 +102,38 @@ button {
   height: 50px;
   background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), #292929;
   background-position: center;
-  background-size: 50% 2px, 2px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-size: 50% 2px, 2px 50%;
   background-repeat: no-repeat;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 input,
 input[type=submit] {
   border: none;
-  border-bottom: 1px solid #292929;
-  padding: 2% 2%;
+  border-bottom: 1.5px solid #292929;
+  padding: 2% 2% 2% 2%;
   height: 2em;
   background: none;
-  text-transform: uppercase;
   width: 100%;
+  margin: 10% 0;
+  padding: 0;
+}
+
+input[type=submit] {
+  text-transform: uppercase;
+  border: 1.5px solid #292929;
+  border-radius: 10px;
+  height: 3em;
 }
 
 input:focus {
   outline: none;
   padding: 4% 2%;
+  background-color: none;
 }
 
 input[type=submit]:hover {
-  padding: 4% 2%;
+  color: #fafafa;
+  background-color: #292929;
 }/*# sourceMappingURL=main.css.map */

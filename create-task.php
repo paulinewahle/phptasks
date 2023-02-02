@@ -10,29 +10,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+//Get post data
+//var_dump($_POST);
+$task = $_POST["task"];
+$describtion = $_POST["describtion"];
+echo "{task} {describtion}"
 
-$sql = "INSERT * FROM tasks";
-$result = $conn->query($sql);
+//send data to DB
+$query = "INSERT INTO tasks (task, desctibtion) VALUES (?, ?)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ss", $task, $describtion);
+
+$success = stmt->execute();
+
+//Redirect user to index.php
+if($success){
+    echo "success";
+    header("location: index.php")
+}
+else{
+    echo "error";
+}
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <script src="script.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <form action="/create-task.php">
-    <label for="task">Task:</label><br>
-    <input type="text" id="fname" name="fname" value=""><br>
-    <label for="desribtion">Describtion:</label><br>
-    <input type="text" id="lname" name="lname" value=""><br><br>
-    <input type="submit" value="Submit">
-    </form> 
-</body>
-</html>
