@@ -8,20 +8,33 @@ function mouseFollow(e) {
     let mouseFollow4 = document.querySelector("#mouseFollow4");
 
     mouseFollow1.style.left = e.clientX + "px";
-    mouseFollow1.style.top = e.clientY + "px";
     mouseFollow2.style.left = e.clientX + "px";
     mouseFollow2.style.top = e.clientY + "px";
-    mouseFollow3.style.left = e.clientX + "px";
     mouseFollow3.style.top = e.clientY + "px";
     mouseFollow4.style.left = e.clientX + "px";
     mouseFollow4.style.top = e.clientY + "px";
 }
 
 
-
-
-function revealSubcontainer() {
-    document.getElementById("subcontainer").style.opacity = "1";
-    document.getElementById("subcontainer").style.left = "62vw";
+function revealNewTask() {
+    document.getElementById("new-task-container").style.opacity = "1";
+    document.getElementById("new-task-container").style.left = "42vw";
 }
+function hideNewTask() {
+    document.getElementById("new-task-container").style.opacity = "0";
+    document.getElementById("new-task-container").style.left = "5vw";
+}
+
+function revealEditTask() {
+    document.getElementById("new-task-container").style.opacity = "1";
+    document.getElementById("new-task-container").style.left = "42vw";
+}
+function hideEditTask() {
+    document.getElementById("new-task-container").style.opacity = "0";
+    document.getElementById("new-task-container").style.left = "5vw";
+}
+
+// if(task.status=="1"){
+//     document.querySelector("checkbox").innerHTML = "checked";
+// }
 

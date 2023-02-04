@@ -1,19 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "todo_application";
+include "connection.php";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+// prepare and bind
+$stmt = $conn->prepare("SELECT * FROM tasks WHERE id=?");
+$stmt->bind_param("i", $_GET["id"]);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+$task = $result->fetch_assoc();
 
 
 $sql = "SELECT * FROM tasks WHERE id=".$_GET["id"];
-$result = $conn->query($sql);
+// $result = $conn->query($sql);
 
 ?>
 
@@ -28,14 +27,35 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
-    <h1>
-    <?php 
-        while($row = $result->fetch_assoc()) {
-            echo "<p> <li> {$row ["id"]} {$row ["title"]} </li> </p>";
-        }
-    ?>
-    </h1>
-    <p>Task:</p> 
-    <?= $id["task"] ?>
+    <div class="container">
+        <h1>
+        <?= $task["title"] ?>
+        </h1>
+        <form action="update-task.php" method="post">
+            
+            <p>
+                <b>Title: </b>
+                <input type="text" placeholder="<?= $task["title"] ?>" name="title" value="<?= $task["title"] ?>">
+            </p>
+            <p>
+                <b>Description: </b>
+                <input type="text" placeholder="<?= $task["title"] ?>" name="description" value="<?= $task["description"]?>">
+            </p>
+            <div class="status-field"> 
+                <input type="radio" name="status" value="0"> 
+                <p>Incomplete</p>
+                <input type="radio" name="status" value="1"> 
+                <p>Complete</p>
+            </div> 
+
+            <input type="hidden" name="id" value="<?= $task["id"] ?>">
+            <input type="submit" value="Update">
+        </form>
+        <form action="delete-task.php" method="post">
+            <input type="hidden" name="id" value="<?= $task["id"] ?>">
+            <input type="submit" value="Delete Note">
+        </form>
+
+    </div>
 </body>
 </html>

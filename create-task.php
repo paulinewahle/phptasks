@@ -6,30 +6,29 @@ $dbname = "todo_application";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
 //Get post data
-//var_dump($_POST);
-$task = $_POST["task"];
-$describtion = $_POST["describtion"];
-echo "{task} {describtion}"
+$title = $_POST["title"];
+$description = $_POST["description"];
+
 
 //send data to DB
-$query = "INSERT INTO tasks (task, desctibtion) VALUES (?, ?)";
+$query = "INSERT INTO tasks (title, description) VALUES (?, ?)";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("ss", $task, $describtion);
+$stmt->bind_param("ss", $title, $description);
 
-$success = stmt->execute();
+$success = $stmt->execute();
 
-//Redirect user to index.php
+
 if($success){
-    echo "success";
-    header("location: index.php")
+  header("location: index.php");
 }
 else{
-    echo "error";
+   
 }
-
 ?>
