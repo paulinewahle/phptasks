@@ -38,13 +38,13 @@ $result = $conn->query($sql);
         <?php
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-              $checked = "";
-              if ($row["status"]=="1"){
-                document.querySelector = "";
-              }
+              // $checked = "";
+              // if ($row["status"]=="1"){
+              //   document.querySelector() = "";
+              // }
               echo "<a href='edit-task.php?id={$row["id"]}'> 
               <li> 
-                <div class='round-checkbox'> <input type='checkbox'>  <label for='checkbox'></label> </div>
+                <div class='round-checkbox'></div> <label for='checkbox'></label> 
                 {$row ["title"]} {$row ["status"]} 
               </li> </a>"; 
             }

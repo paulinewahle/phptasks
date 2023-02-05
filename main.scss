@@ -8,9 +8,14 @@
 $black: #292929;
 $serif: 'Cardo', serif;
 $smoothTransition: all 1s ease;
+
+
+@media only screen and (max-width: 600px) {
+    
+}
+
 *{
     font-family: $serif;
-
 }
 ::-webkit-scrollbar {
     background: rgba(0,0,0,0);
@@ -24,7 +29,6 @@ body{
     color: $black;
     overflow: hidden;
     background-color: #fafafa;
-
 }
 svg{
     position: relative;
@@ -194,7 +198,6 @@ input[type=submit]:hover{
 input[type=radio] {
     width: 20px;
     margin: 0 5px;
-
 }
 input[type=radio]:checked ~ .checkmark {
     background-color: red;
@@ -202,8 +205,10 @@ input[type=radio]:checked ~ .checkmark {
 .round-checkbox{
     display: inline-block;
     width: 20px;
+    height: 20px;
+    border: 1px solid $black;
+    border-radius: 50%;
 }
-
 .status-field{
     display: flex;
     align-items: center;
