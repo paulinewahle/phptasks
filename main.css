@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+@font-face {
+  font-family: serif;
+  src: url("ReciaSerifDisplay-Bold.ttf") format("truetype");
+}
 * {
-  font-family: "Cardo", serif;
+  font-family: serif;
 }
 
 ::-webkit-scrollbar {
@@ -58,6 +62,8 @@ svg {
   padding: 5%;
   box-sizing: border-box;
   z-index: 10000;
+  background: rgba(250, 250, 250, 0.51);
+  border: 1px solid #fafafa;
 }
 
 .subcontainer {
@@ -67,7 +73,7 @@ svg {
   border-radius: 0 40px 40px 0;
   position: absolute;
   left: 35vw;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .tab {
@@ -133,10 +139,12 @@ ul {
 ul li {
   border-bottom: 1.5px solid #292929;
   padding: 2%;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
 }
 ul li:hover {
-  padding: 4% 2%;
+  padding: 6% 2%;
 }
 
 button {
@@ -216,13 +224,39 @@ input[type=radio]:checked ~ .checkmark {
 
 .round-checkbox {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #292929;
+  width: 1em;
+  height: 1em;
+  border: 1.5px solid #292929;
   border-radius: 50%;
+  margin: 0 5% 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  display: block;
+  font-size: 1.5em;
 }
 
 .status-field {
   display: flex;
   align-items: center;
+}
+
+.li-arrow {
+  width: 5em;
+  font-size: 2em;
+  display: none;
+  text-align: end;
+}
+
+.edit-task-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+#edit-task-container {
+  position: fixed;
+  border: 5px solid red;
 }/*# sourceMappingURL=main.css.map */

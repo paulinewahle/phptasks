@@ -32,6 +32,7 @@ $result = $conn->query($sql);
 <svg id="mouseFollow4" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <path class="path" fill="#EF9B80" d="M59.2,-51.4C75.4,-43,86.2,-21.5,82.2,-4C78.2,13.5,59.3,26.9,43.1,38C26.9,49,13.5,57.7,-3.5,61.2C-20.5,64.7,-40.9,63.1,-50.8,52C-60.6,40.9,-59.8,20.5,-57.1,2.7C-54.4,-15.1,-49.8,-30.1,-40,-38.6C-30.1,-47,-15.1,-48.9,3.2,-52.1C21.5,-55.3,43,-59.9,59.2,-51.4Z" transform="translate(100 100)" />
 </svg>
+
     <div class="container">
         <h1>ToDo</h1> 
         <ul>
@@ -43,9 +44,10 @@ $result = $conn->query($sql);
               //   document.querySelector() = "";
               // }
               echo "<a href='edit-task.php?id={$row["id"]}'> 
-              <li> 
-                <div class='round-checkbox'></div> <label for='checkbox'></label> 
-                {$row ["title"]} {$row ["status"]} 
+              <li class='edit-task-li'> 
+                <div class='round-checkbox'> <div class='tick active'> &#10003 </div> </div> 
+                {$row ["title"]} {$row ["status"]}
+                <div class='li-arrow'> &#10137 </div>
               </li> </a>"; 
             }
           } 
@@ -64,10 +66,15 @@ $result = $conn->query($sql);
     <!-- <div class="subcontainer" id="edit-task-container">
           <div class="tab new-task-tab"> <div class="close" onclick="hideEditTask()"></div> <h2>Edit Note</h2> </div>
           <?php
-          include "create-task.php"
+          //include "create-task.php"
           ?>
     </div> -->
-   
+    <div class="subcontainer" id="edit-task-container">
+          <div class="tab new-task-tab"> <div class="close"></div> <h2>Edit Note</h2> </div>
+          <?php
+          require "edit-task.php"
+          ?>
+    </div> 
     
 </body>
 </html>
