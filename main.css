@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
 @font-face {
-  font-family: serif;
-  src: url("ReciaSerifDisplay-Bold.ttf") format("truetype");
+  font-family: "Macherie";
+  src: url("Macherie.otf");
+  font-style: normal;
+  font-weight: normal;
 }
-* {
-  font-family: serif;
-}
-
 ::-webkit-scrollbar {
   background: rgba(0, 0, 0, 0);
   width: 7px;
@@ -22,12 +20,22 @@ body {
   color: #292929;
   overflow: hidden;
   background-color: #fafafa;
+  font-family: "Times", serif;
+  background-size: contain;
+  background: linear-gradient(241deg, rgb(235, 223, 216) 0%, rgb(90, 112, 105) 54%, rgb(239, 155, 128) 100%);
+}
+
+#texture {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  border: 2px solid red;
+  background-size: contain;
 }
 
 svg {
   position: relative;
-  filter: blur(0px);
-  mix-blend-mode: darken;
+  filter: blur(5px);
   z-index: -100;
 }
 
@@ -62,18 +70,19 @@ svg {
   padding: 5%;
   box-sizing: border-box;
   z-index: 10000;
-  background: rgba(250, 250, 250, 0.51);
+  background: rgba(250, 250, 250, 0.2);
   border: 1px solid #fafafa;
+  background-image: url("gggrain (2).svg");
 }
 
 .subcontainer {
   opacity: 0;
   padding: 13% 8% 5% 5%;
-  z-index: 10;
+  z-index: 100;
   border-radius: 0 40px 40px 0;
-  position: absolute;
   left: 35vw;
   transition: all 0.5s ease;
+  border: 1px solid white;
 }
 
 .tab {
@@ -83,6 +92,8 @@ svg {
   left: 90%;
   top: 0%;
   padding: 0;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
   box-shadow: rgba(100, 100, 111, 0.2) 10px 0 30px inset;
   border-radius: 0px 40px 0 10px;
 }
@@ -90,9 +101,11 @@ svg {
 .tab h2 {
   color: grey;
   width: 10rem;
-  margin-top: 9em;
+  margin-top: 8em;
+  margin-left: 0.2em;
   transform: rotate(-90deg);
   transform-origin: top left;
+  font-family: "Macherie";
 }
 
 .close {
@@ -121,6 +134,7 @@ svg {
 h1 {
   font-size: 2, 5em;
   color: #292929;
+  font-family: "Macherie";
 }
 
 a {
@@ -135,6 +149,7 @@ ul {
   height: 80%;
   overflow-y: scroll;
   text-align: left;
+  font-family: sans-serif;
 }
 ul li {
   border-bottom: 1.5px solid #292929;
@@ -150,6 +165,7 @@ ul li:hover {
 button {
   border: none;
   background: none;
+  font-family: "Macherie";
 }
 
 button:hover {
@@ -234,7 +250,7 @@ input[type=radio]:checked ~ .checkmark {
   align-items: center;
 }
 
-.active {
+.tick {
   display: block;
   font-size: 1.5em;
 }

@@ -6,20 +6,22 @@
     align-items: center;
 }
 $black: #292929;
-@font-face {
-    font-family: serif;
-    src:url("ReciaSerifDisplay-Bold.ttf") format('truetype'); 
-}
 $smoothTransition: all .5s ease;
+
+@font-face {
+    font-family: 'Macherie';
+    src: url('Macherie.otf') ;
+        font-style: normal;
+        font-weight: normal;
+}
+$sans: "Times", serif;
 
 
 @media only screen and (max-width: 600px) {
     
 }
 
-*{
-    font-family: serif;
-}
+
 ::-webkit-scrollbar {
     background: rgba(0,0,0,0);
     width: 7px;
@@ -32,12 +34,22 @@ body{
     color: $black;
     overflow: hidden;
     background-color: #fafafa;
+    font-family: $sans;
+    background-size: contain;
+    background: linear-gradient(241deg, rgba(235,223,216,1) 0%, rgba(90,112,105,1) 54%, rgba(239,155,128,1) 100%);
 
+}
+#texture{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid red;
+    //background-image: url('gggrain (2).svg');
+    background-size: contain;
 }
 svg{
     position: relative;
-    filter: blur(0px);
-    mix-blend-mode: darken;
+    filter: blur(5px);
     z-index: -100;
 }
 #mouseFollow1{
@@ -66,17 +78,18 @@ svg{
     padding: 5%;
     box-sizing: border-box;
     z-index: 10000;
-    background: rgba(250, 250, 250, 0.51);
+    background: rgba(250, 250, 250, 0.2);
     border: 1px solid #fafafa;
+    background-image: url('gggrain (2).svg');
 }
 .subcontainer{
     opacity: 0;
     padding: 13% 8% 5% 5%;
-    z-index: 10;
+    z-index: 100;
     border-radius: 0 40px 40px 0;
-    position: absolute;
     left: 35vw;
     transition: $smoothTransition;
+    border: 1px solid white;
 }
 .tab{
     width: 10%;
@@ -85,15 +98,19 @@ svg{
     left: 90%;
     top: 0%;
     padding: 0;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
     box-shadow: rgba(100, 100, 111, 0.2) 10px 0 30px inset;    
     border-radius: 0px 40px 0 10px;
 }
 .tab h2{
     color: grey;
     width: 10rem;
-    margin-top: 9em;
+    margin-top: 8em;
+    margin-left: .2em;
     transform: rotate(-90deg);
     transform-origin: top left;
+    font-family: 'Macherie';
 }
 .close {
     margin: 3em 0 0 1em;
@@ -119,6 +136,7 @@ svg{
 h1{
     font-size: 2,5em;
     color: $black;
+    font-family: 'Macherie';
 }
 a{
     color: $black;
@@ -131,6 +149,7 @@ ul{
     height: 80%;
     overflow-y: scroll;
     text-align: left;
+    font-family: sans-serif;
     li{
         border-bottom: 1.5px solid $black;
         padding: 2%;
@@ -145,6 +164,7 @@ ul{
 button{
     border: none;
     background: none;
+    font-family: 'Macherie';
 }
 button:hover{
     cursor: pointer;
@@ -219,7 +239,7 @@ input[type=radio]:checked ~ .checkmark {
     margin: 0 5% 0 0;
     @include center;
 }
-.active{
+.tick{
     display: block;
     font-size: 1.5em;
 }

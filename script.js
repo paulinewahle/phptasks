@@ -34,16 +34,8 @@ function hideEditTask() {
     document.getElementById("new-task-container").style.left = "5vw";
 }
 
-//------------------------------------
-//document.querySelector(".edit-task-li").addEventListener("mouseover", displayArrow);
-//document.querySelector(".edit-task-li").addEventListener("mouseleave", hideArrow);
-// console.log(querySelector(".edit-task-li"))
-// function displayArrow() {
-//     console.log("hi")
-//     document.querySelector(".li-arrow").style.display = "inline-block";
-// }
-// function hideArrow() {
-//     document.querySelector(".li-arrow").style.display = "none";
-// }
+
+
+
 
 
