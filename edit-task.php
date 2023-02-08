@@ -25,6 +25,7 @@ $sql = "SELECT * FROM tasks WHERE id=".$_GET["id"];
     <link rel="stylesheet" href="main.css">
     <script src="script.js"></script>
     <title>Document</title>
+
 </head>
 <body>
     <div class="container">

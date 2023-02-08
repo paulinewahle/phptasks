@@ -16,6 +16,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="main.css" type="text/css"/>
     <script src="script.js"></script>
     <title>To-Do</title>
+    
 </head>
 <body>
 
@@ -26,6 +27,16 @@ $result = $conn->query($sql);
     <div class="container">
         <h1>ToDo</h1> 
         <ul>
+        <script>
+        window.onload = function() {
+            if (<?= $task["status"] ?> == 1){
+                document.querySelector(".round-checkbox").style.border: "2px solid red";
+            }
+            else{
+                document.querySelector(".round-checkbox").style.border: "2px solid blue";
+            }
+        }
+    </script>
         <?php
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
@@ -33,6 +44,7 @@ $result = $conn->query($sql);
               if ($row["status"]=="1"){
                 $checked = true;
               }
+              
               echo "<a href='edit-task.php?id={$row["id"]}'> 
               <li class='edit-task-li'> 
                 <div class='round-checkbox'> <div class='tick'> </div> </div> 
@@ -70,10 +82,9 @@ $result = $conn->query($sql);
 </html>
 <script>
 var checked = "<?php echo json_encode($checked); ?>";
+console.log("here" <?= $checked?>)
 
-console.log(checked)
-
-if (checked == false){
+if (checked === true){
   document.querySelector('.round-checkbox').style.border= "1px solid red";
   console.log(checked)
 }
