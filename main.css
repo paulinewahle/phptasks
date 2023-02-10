@@ -21,6 +21,7 @@ body {
   overflow: hidden;
   background-color: #fafafa;
   font-family: "Times", serif;
+  background-image: url("blur.jpg");
   background-size: contain;
 }
 

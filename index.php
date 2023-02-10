@@ -64,28 +64,17 @@ $result = $conn->query($sql);
           include "new-task.php"
           ?>
     </div>
-    <!-- <div class="subcontainer" id="edit-task-container">
-          <div class="tab new-task-tab"> <div class="close" onclick="hideEditTask()"></div> <h2>Edit Note</h2> </div>
-          <?php
-          //include "create-task.php"
-          ?>
-    </div> -->
-    <!-- <div class="subcontainer" id="edit-task-container">
-          <div class="tab new-task-tab"> <div class="close"></div> <h2>Edit Note</h2> </div>
-          <?php
-          require "edit-task.php"
-          ?>
-    </div>  -->
+   
    
 </body>
 </html>
 <script>
-// var checked = "<?php echo json_encode($checked); ?>";
-// console.log("here" <?= $checked?>)
+
+var checked = "<?php echo json_encode($checked); ?>";
 
 console.log(checked)
 
-if (checked == false){
+if (checked === true){
   document.querySelector('.round-checkbox').style.border= "1px solid red";
   console.log(checked)
 }

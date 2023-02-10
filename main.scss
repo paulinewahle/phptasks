@@ -21,7 +21,7 @@ $sans: "Times", serif;
     
 }
 
-
+//hello
 ::-webkit-scrollbar {
     background: rgba(0,0,0,0);
     width: 7px;
@@ -35,6 +35,7 @@ body{
     overflow: hidden;
     background-color: #fafafa;
     font-family: $sans;
+    background-image: url('blur.jpg');
     background-size: contain;
 }
 #texture{
