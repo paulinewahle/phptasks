@@ -22,14 +22,12 @@ body {
   background-color: #fafafa;
   font-family: "Times", serif;
   background-size: contain;
-  background: linear-gradient(241deg, rgb(235, 223, 216) 0%, rgb(90, 112, 105) 54%, rgb(239, 155, 128) 100%);
 }
 
 #texture {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  border: 2px solid red;
   background-size: contain;
 }
 

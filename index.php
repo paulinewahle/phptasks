@@ -27,16 +27,16 @@ $result = $conn->query($sql);
     <div class="container">
         <h1>ToDo</h1> 
         <ul>
-        <script>
+        <!-- <script>
         window.onload = function() {
-            if (<?= $task["status"] ?> == 1){
+            if (  == 1){
                 document.querySelector(".round-checkbox").style.border: "2px solid red";
             }
             else{
                 document.querySelector(".round-checkbox").style.border: "2px solid blue";
             }
         }
-    </script>
+    </script> -->
         <?php
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
@@ -81,12 +81,12 @@ $result = $conn->query($sql);
 </body>
 </html>
 <script>
-var checked = "<?php echo json_encode($checked); ?>";
-console.log("here" <?= $checked?>)
+// var checked = "<?php echo json_encode($checked); ?>";
+// console.log("here" <?= $checked?>)
 
-if (checked === true){
-  document.querySelector('.round-checkbox').style.border= "1px solid red";
-  console.log(checked)
-}
+// if (checked === true){
+//   document.querySelector('.round-checkbox').style.border= "1px solid red";
+//   console.log(checked)
+// }
 
 </script>
