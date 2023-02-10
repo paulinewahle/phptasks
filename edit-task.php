@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+require_once "connection.php";
 
 // prepare and bind
 $stmt = $conn->prepare("SELECT * FROM tasks WHERE id=?");

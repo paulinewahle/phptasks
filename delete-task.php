@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+require_once "connection.php";
 
 
 // Get post data

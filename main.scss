@@ -34,9 +34,8 @@ body{
     color: $black;
     overflow: hidden;
     background-color: #fafafa;
-    font-family: $sans;
-    background-size: contain;
-    background: linear-gradient(241deg, rgba(235,223,216,1) 0%, rgba(90,112,105,1) 54%, rgba(239,155,128,1) 100%);
+    background-size: cover;
+    background-image: url('blur.jpg');
 
 }
 #texture{
@@ -44,12 +43,11 @@ body{
     height: 100vh;
     width: 100vw;
     border: 2px solid red;
-    //background-image: url('gggrain (2).svg');
     background-size: contain;
 }
 svg{
     position: relative;
-    filter: blur(5px);
+    filter: blur(70px);
     z-index: -100;
 }
 #mouseFollow1{
@@ -68,7 +66,7 @@ svg{
 .container, .subcontainer{
     height: 80vh;
     width: 30vw;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(40px);
     border-radius: 40px;
     box-shadow: rgba(100, 100, 111, 0.2) 7px 7px 29px 0px;
     position: fixed;
@@ -79,8 +77,6 @@ svg{
     box-sizing: border-box;
     z-index: 10000;
     background: rgba(250, 250, 250, 0.2);
-    border: 1px solid #fafafa;
-    background-image: url('gggrain (2).svg');
 }
 .subcontainer{
     opacity: 0;
@@ -89,7 +85,6 @@ svg{
     border-radius: 0 40px 40px 0;
     left: 35vw;
     transition: $smoothTransition;
-    border: 1px solid white;
 }
 .tab{
     width: 10%;
@@ -98,8 +93,6 @@ svg{
     left: 90%;
     top: 0%;
     padding: 0;
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
     box-shadow: rgba(100, 100, 111, 0.2) 10px 0 30px inset;    
     border-radius: 0px 40px 0 10px;
 }
@@ -142,6 +135,9 @@ a{
     color: $black;
     text-decoration: none;
 }
+p{
+    font-family: 'Macherie';
+}
 ul{
     list-style: none;
     padding: 0;
@@ -149,7 +145,7 @@ ul{
     height: 80%;
     overflow-y: scroll;
     text-align: left;
-    font-family: sans-serif;
+    font-family: $sans;
     li{
         border-bottom: 1.5px solid $black;
         padding: 2%;
@@ -161,10 +157,12 @@ ul{
         padding: 6% 2%;
     }
 }
+label{
+    font-family: 'Macherie';
+}
 button{
     border: none;
     background: none;
-    font-family: 'Macherie';
 }
 button:hover{
     cursor: pointer;
@@ -197,10 +195,10 @@ button:hover{
   }
 
 input,
-input[type=submit]{
+input[type=submit], textarea{
     border: none;
     border-bottom: 1.5px solid $black;
-    padding: 2% 2% 2% 2%;
+    padding: 2% 2% 2% 4%;
     height: 2em;
     background: none;
     width: 100%;
@@ -213,6 +211,7 @@ input[type=submit]{
     border-radius: 10px;
     height: 3em;
     margin: 2% 0;
+    font-family: 'Macherie';
 }
 input:focus{
     outline: none;
@@ -240,7 +239,7 @@ input[type=radio]:checked ~ .checkmark {
     @include center;
 }
 .tick{
-    display: block;
+    display: none;
     font-size: 1.5em;
 }
 
@@ -260,5 +259,4 @@ input[type=radio]:checked ~ .checkmark {
 }
 #edit-task-container{
     position: fixed;
-    border: 5px solid red;
 }
