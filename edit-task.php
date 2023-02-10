@@ -11,8 +11,6 @@ $result = $stmt->get_result();
 $task = $result->fetch_assoc();
 
 
-$sql = "SELECT * FROM tasks WHERE id=".$_GET["id"];
-// $result = $conn->query($sql);
 
 ?>
 

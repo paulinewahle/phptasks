@@ -240,7 +240,7 @@ input[type=radio]:checked ~ .checkmark {
     @include center;
 }
 .tick{
-    display: none;
+    display: block;
     font-size: 1.5em;
 }
 
