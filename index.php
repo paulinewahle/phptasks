@@ -15,6 +15,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="main.css" type="text/css"/>
     <script src="script.js"></script>
     <title>To-Do</title>
+    
 </head>
 <body>
 <svg  id="mouseFollow1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 600 600"><path d="M286.5269470214844,517.3652954101562C245.5089848836263,530.3892466227213,192.96407572428384,503.5928192138672,161.67665100097656,476.94610595703125C130.38922627766928,450.2993927001953,96.1077880859375,401.1975911458333,98.80239868164062,357.4850158691406C101.49700927734375,313.77244059244794,142.0658721923828,242.9640655517578,177.8443145751953,214.670654296875C213.6227569580078,186.3772430419922,275.44909922281903,184.5808359781901,313.4730529785156,187.72454833984375C351.4970067342122,190.8682607014974,390.26947530110675,198.35328674316406,405.988037109375,233.53292846679688C421.70659891764325,268.7125701904297,427.6946055094401,351.49700419108075,407.784423828125,398.8023986816406C387.8742421468099,446.1077931722005,327.54490915934247,504.3413441975911,286.5269470214844,517.3652954101562C245.5089848836263,530.3892466227213,192.96407572428384,503.5928192138672,161.67665100097656,476.94610595703125" fill="url(&quot;#SvgjsRadialGradient1000&quot;)" fill-opacity="1" stroke-width="0" stroke="hsl(340, 45%, 30%)"></path><defs><radialGradient id="SvgjsRadialGradient1000" r="0.5"><stop stop-color="hsl(17, 94%, 52%)" offset="0"></stop><stop stop-color="#e9a949" offset="1"></stop></radialGradient></defs></svg>
@@ -24,6 +25,16 @@ $result = $conn->query($sql);
     <div class="container">
         <h1>ToDo</h1> 
         <ul>
+        <!-- <script>
+        window.onload = function() {
+            if (  == 1){
+                document.querySelector(".round-checkbox").style.border: "2px solid red";
+            }
+            else{
+                document.querySelector(".round-checkbox").style.border: "2px solid blue";
+            }
+        }
+    </script> -->
         <?php
         //!
         if ($result->num_rows > 0) {
@@ -32,6 +43,7 @@ $result = $conn->query($sql);
               if ($row["status"]=="1"){
                 $checked = true;
               }
+              
               echo "<a href='edit-task.php?id={$row["id"]}'> 
               <li class='edit-task-li'> 
                 <div class='round-checkbox'> <div class='tick'> &#10004 </div> </div> 
@@ -68,13 +80,13 @@ $result = $conn->query($sql);
 </body>
 </html>
 <script>
-//! can $var be accessed from script.js?
-var checked = "<?php echo json_encode($checked); ?>";
+// var checked = "<?php echo json_encode($checked); ?>";
+// console.log("here" <?= $checked?>)
 
 console.log(checked)
 
 if (checked == false){
-  document.querySelector('.tick').style.display= "block";
+  document.querySelector('.round-checkbox').style.border= "1px solid red";
   console.log(checked)
 }
 

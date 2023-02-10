@@ -25,14 +25,14 @@ function hideNewTask() {
     document.getElementById("new-task-container").style.left = "5vw";
 }
 
-function revealEditTask() {
-    document.getElementById("new-task-container").style.opacity = "1";
-    document.getElementById("new-task-container").style.left = "42vw";
-}
-function hideEditTask() {
-    document.getElementById("new-task-container").style.opacity = "0";
-    document.getElementById("new-task-container").style.left = "5vw";
-}
+// function revealEditTask() {
+//     document.getElementById("new-task-container").style.opacity = "1";
+//     document.getElementById("new-task-container").style.left = "42vw";
+// }
+// function hideEditTask() {
+//     document.getElementById("new-task-container").style.opacity = "0";
+//     document.getElementById("new-task-container").style.left = "5vw";
+// }
 
 
 

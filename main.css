@@ -20,8 +20,8 @@ body {
   color: #292929;
   overflow: hidden;
   background-color: #fafafa;
-  background-size: cover;
-  background-image: url("blur.jpg");
+  font-family: "Times", serif;
+  background-size: contain;
 }
 
 #texture {
