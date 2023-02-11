@@ -41,7 +41,6 @@ $result = $conn->query($sql);
               <li class='edit-task-li'> 
                 <div class='round-checkbox'> <div class='tick'> {$checked} </div> </div> 
                 {$row ["title"]} 
-                
               </li> </a>"; 
             }
           } 
