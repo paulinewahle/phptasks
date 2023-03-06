@@ -13,7 +13,7 @@
     <input type="text" name="title" value=""><br>
 
     <label>Describtion:</label><br>
-    <input type="text" name="description" value=""><br><br>
+    <input type="text" name="description" autocomplete="off" value=""><br><br>
 
     <input type="submit" value="Save">
     </form> 

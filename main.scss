@@ -37,6 +37,7 @@ body{
     font-family: $sans;
     background-image: url('blur.jpg');
     background-size: contain;
+    filter: grayscale(1);
 }
 #texture{
     position: absolute;
@@ -226,6 +227,7 @@ input[type=submit]:hover{
 input[type=radio] {
     width: 20px;
     margin: 0 5px;
+    
 }
 input[type=radio]:checked ~ .checkmark {
     background-color: red;
